@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    overflow: hidden;
+    background: black;
+    color: white;
+}
+
+/* START SCREEN */
+#startScreen {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle, #020024, #000);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+#startBtn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(45deg, #00f2ff, #0066ff);
+    color: black;
+}
+
+/* SPACE */
+#space {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+}
+
+/* STARS */
+#stars {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(1px 1px at 20% 30%, white, transparent),
+        radial-gradient(1px 1px at 40% 70%, white, transparent),
+        radial-gradient(1px 1px at 60% 20%, white, transparent),
+        radial-gradient(1px 1px at 80% 80%, white, transparent),
+        radial-gradient(2px 2px at 10% 90%, white, transparent),
+        radial-gradient(2px 2px at 90% 10%, white, transparent);
+    background-size: 200px 200px;
+    animation: moveStars 30s linear infinite;
+}
+
+
+@keyframes moveStars {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 0 2000px;
+    }
+}
+
+/* COUNTDOWN */
+#countdown {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    text-align: center;
+    font-size: 5rem;
+    opacity: 0;
+}
+
+/* ROCKET */
+#rocket {
+    position: absolute;
+    bottom: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 120px;
+    opacity: 0;
+}
+
+.body {
+    width: 60px;
+    height: 100px;
+    background: #ddd;
+    border-radius: 30px 30px 10px 10px;
+}
+
+.window {
+    width: 15px;
+    height: 15px;
+    background: #00f2ff;
+    border-radius: 50%;
+    margin: 15px auto;
+}
+
+.flame {
+    width: 20px;
+    height: 30px;
+    background: orange;
+    margin: auto;
+    border-radius: 50%;
+    animation: flame 0.2s infinite alternate;
+}
+
+@keyframes flame {
+    from {
+        transform: scaleY(1);
+    }
+
+    to {
+        transform: scaleY(1.4);
+    }
+}
+
+/* MESSAGE */
+#message {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
+
+#message h1 {
+    font-size: 2.5rem;
+    text-shadow: 0 0 20px cyan;
+}
+
+#message h2 {
+    font-size: 4rem;
+    color: gold;
+}
